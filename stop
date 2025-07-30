@@ -1,0 +1,9 @@
+pkill -f music-and-light.py
+if [[ $(date '+%H:%M:%S') < '17:30:00' ]]
+then
+    kasa --type bulb --host {ip1} off --transition 5000 &
+    kasa --type bulb --host {ip2}  off --transition 5000
+else
+    kasa --type bulb --host {ip1} hsv 30 1 75 --transition 5000 &
+    kasa --type bulb --host {ip2} hsv 30 1 75 --transition 5000
+fi

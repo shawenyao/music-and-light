@@ -1,0 +1,2 @@
+pkill -f music-and-light.py
+nohup python3 -u /home/pi/Python/music-and-light/music-and-light.py > /dev/null &
